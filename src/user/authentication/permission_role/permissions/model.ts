@@ -12,7 +12,9 @@ const PermissionsModel = SequelizeVar.sequelize.define(
         name: {
             type: DataTypes.STRING(100)
         },
-        
+        key: {
+            type: DataTypes.STRING(100)
+        },
     }
 )
 
