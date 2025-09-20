@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import { SequelizeVar } from "../db.js";
+import RoleModel from "./authentication/permission_role/role/model.js";
 
 const UserModel = SequelizeVar.sequelize.define(
     "user",
@@ -20,3 +21,7 @@ const UserModel = SequelizeVar.sequelize.define(
         }
     }
 )
+
+RoleModel.hasOne(UserModel)
+
+export default UserModel

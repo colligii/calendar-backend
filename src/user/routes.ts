@@ -1,5 +1,5 @@
 import { Router } from "express";
-import PermissionRoleModel from "./authentication/permission_role/model.js";
+import UserModel from "./model.js";
 
 const userRouter = Router();
 

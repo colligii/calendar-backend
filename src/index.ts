@@ -11,9 +11,17 @@ async function main() {
     app.use((await import('./routes.js')).default)
     app.use(express.json())
 
-    await SequelizeVar.sequelize.sync({ force: true })
+    // initial script
+
+    posScript()
+
+    // await SequelizeVar.sequelize.sync({ force: true })
 
     app.listen(PORT, () => console.log(`Listening to port ${PORT}`))
+}
+
+async function posScript() {
+    (await import('./initial-script.js')).default()
 }
 
 main()
